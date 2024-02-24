@@ -179,7 +179,7 @@ const Layout = ({ children, currentPage }) => {
                           <ChevronDownIcon
                             className={classNames(
                               open ? "rotate-180" : "",
-                              "h-5 w-5 flex-none"
+                              "h-5 w-5 flex-none",
                             )}
                             aria-hidden="true"
                           />
