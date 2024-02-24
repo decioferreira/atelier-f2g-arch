@@ -4,7 +4,7 @@
 module.exports = {
   siteMetadata: {
     title: `Atelier F2G Arch`,
-    siteUrl: `https://www.atelier-f2g-arch.pt`,
+    siteUrl: `http://decioferreira.com/atelier-f2g-arch`,
   },
   plugins: [
     "gatsby-plugin-postcss",
