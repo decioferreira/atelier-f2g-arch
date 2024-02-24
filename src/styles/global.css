@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:focus-visible {
+    outline-color: theme(colors.gray.100);
+}
+
+.embla {
+    --slide-spacing: 1rem;
+    --slide-size: 100%;
+    --slide-height: 24rem;
+}
+
+.embla__container {
+    backface-visibility: hidden;
+    margin-left: calc(var(--slide-spacing) * -1);
+}
+
+.embla__slide {
+    flex: 0 0 var(--slide-size);
+    min-width: 0;
+    padding-left: var(--slide-spacing);
+    position: relative;
+}
+
+.embla__slide__img {
+    display: block;
+    height: var(--slide-height);
+    width: 100%;
+    object-fit: cover;
+}
+
+.embla__slide:nth-child(1) {
+    flex: 0 0 60%;
+}
+
+.embla__button {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    touch-action: manipulation;
+    display: inline-flex;
+    text-decoration: none;
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    margin: 0;
+
+    z-index: 1;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: 4rem;
+    height: 4rem;
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.embla__button--prev {
+    left: 1.6rem;
+}
+
+.embla__button--next {
+    right: 1.6rem;
+}
+
+.embla__button:disabled {
+    opacity: 0.3;
+}
+
+.embla__button__svg {
+    width: 65%;
+    height: 65%;
+}
