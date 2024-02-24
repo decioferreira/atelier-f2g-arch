@@ -2,9 +2,10 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+  pathPrefix: "/atelier-f2g-arch",
   siteMetadata: {
     title: `Atelier F2G Arch`,
-    siteUrl: `http://decioferreira.com/atelier-f2g-arch`,
+    siteUrl: `http://decioferreira.github.io/atelier-f2g-arch`,
   },
   plugins: [
     "gatsby-plugin-postcss",
