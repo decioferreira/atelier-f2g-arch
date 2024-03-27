@@ -1,25 +1,12 @@
-import React, { Fragment, useState } from "react";
-import { Dialog, Disclosure, Popover, Transition } from "@headlessui/react";
+import React, { useState } from "react";
+import { Dialog, Popover } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import {
   LanguageSelector,
   Translate,
   TranslateLink,
   useTranslateContext,
 } from "gatsby-plugin-translate";
-
-const projects = [
-  {
-    page: "project_01",
-    name: "layout.project_01_name",
-    to: "/project/01",
-  },
-];
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
 
 const navigation = [];
 
@@ -66,51 +53,8 @@ const Layout = ({ children, currentPage }) => {
           </div>
 
           <Popover.Group className="hidden lg:flex lg:gap-x-10">
-            <Popover className="relative">
-              <Popover.Button
-                className={`inline-flex items-center gap-x-1 text-sm font-semibold leading-6 ${
-                  currentPage.startsWith("project_")
-                    ? "text-brand-light-100"
-                    : "text-brand-light-300"
-                } hover:text-brand-light-50 p-2`}
-              >
-                <span>
-                  <Translate id="layout.projects" />
-                </span>
-                <ChevronDownIcon className="h-5 w-5" aria-hidden="true" />
-              </Popover.Button>
-
-              <Transition
-                as={Fragment}
-                enter="transition ease-out duration-200"
-                enterFrom="opacity-0 translate-y-1"
-                enterTo="opacity-100 translate-y-0"
-                leave="transition ease-in duration-150"
-                leaveFrom="opacity-100 translate-y-0"
-                leaveTo="opacity-0 translate-y-1"
-              >
-                <Popover.Panel className="absolute left-1/2 z-10 mt-5 flex w-screen max-w-min -translate-x-1/2 px-4">
-                  <div className="w-56 shrink rounded-xl bg-brand-dark-600 p-4 text-sm font-semibold leading-6 shadow-lg ring-1 ring-gray-900/5">
-                    {projects.map((item) => (
-                      <TranslateLink
-                        key={item.name}
-                        to={item.to}
-                        className={`block p-2 ${
-                          currentPage === item.page
-                            ? "text-brand-light-100"
-                            : "text-brand-light-300"
-                        } hover:text-brand-light-50`}
-                      >
-                        <Translate id={item.name} />
-                      </TranslateLink>
-                    ))}
-                  </div>
-                </Popover.Panel>
-              </Transition>
-            </Popover>
-
             <TranslateLink
-              to="/contact"
+              to="/"
               className={`text-sm font-semibold leading-6 ${
                 currentPage === "contact"
                   ? "text-brand-light-100"
@@ -136,6 +80,7 @@ const Layout = ({ children, currentPage }) => {
             )}
           </Popover.Group>
         </nav>
+
         <Dialog
           as="div"
           className="lg:hidden"
@@ -171,36 +116,8 @@ const Layout = ({ children, currentPage }) => {
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
-                  <Disclosure as="div" className="-mx-3">
-                    {({ open }) => (
-                      <>
-                        <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-brand-light-100 hover:bg-gray-50 hover:text-brand-dark-500">
-                          <Translate id="layout.projects" />
-                          <ChevronDownIcon
-                            className={classNames(
-                              open ? "rotate-180" : "",
-                              "h-5 w-5 flex-none",
-                            )}
-                            aria-hidden="true"
-                          />
-                        </Disclosure.Button>
-                        <Disclosure.Panel className="mt-2 space-y-2">
-                          {projects.map((item) => (
-                            <Disclosure.Button
-                              key={item.name}
-                              as="a"
-                              href={item.to}
-                              className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-brand-light-100 hover:bg-gray-50 hover:text-brand-dark-500"
-                            >
-                              <Translate id={item.name} />
-                            </Disclosure.Button>
-                          ))}
-                        </Disclosure.Panel>
-                      </>
-                    )}
-                  </Disclosure>
                   <TranslateLink
-                    to="/contact"
+                    to="/"
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-brand-light-100 hover:bg-gray-50 hover:text-brand-dark-500"
                   >
                     <Translate id="layout.contact_us" />
