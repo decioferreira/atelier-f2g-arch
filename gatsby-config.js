@@ -2,15 +2,14 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
-  pathPrefix: "/atelier-f2g-arch",
   siteMetadata: {
-    title: `Atelier F2G Arch`,
-    siteUrl: `http://decioferreira.github.io/atelier-f2g-arch`,
+    title: "Atelier F2G Arch",
+    siteUrl: "https://atelier-f2g-arch.pt",
   },
   plugins: [
     "gatsby-plugin-postcss",
     {
-      resolve: `gatsby-plugin-google-gtag`,
+      resolve: "gatsby-plugin-google-gtag",
       options: {
         trackingIds: ["G-V7G4XG2DS5"],
         pluginConfig: {
@@ -37,11 +36,11 @@ module.exports = {
       __key: "images",
     },
     {
-      resolve: `gatsby-plugin-translate`,
+      resolve: "gatsby-plugin-translate",
       options: {
         sourceLanguage: "pt",
         targetLanguages: ["pt", "en"],
       },
-    },
+    }
   ],
 };
