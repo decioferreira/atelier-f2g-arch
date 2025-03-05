@@ -28,7 +28,7 @@ const Layout = ({ children, currentPage }) => {
   const { language } = useTranslateContext();
 
   return (
-    <div class="bg-brand-dark-900">
+    <div className="bg-brand-dark-900">
       <header>
         <nav
           className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
