@@ -41,6 +41,6 @@ module.exports = {
         sourceLanguage: "pt",
         targetLanguages: ["pt", "en"],
       },
-    }
+    },
   ],
 };
